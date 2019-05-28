@@ -1,0 +1,33 @@
+{
+    "name" : "puzzle/user-bundle",
+    "description" : "Manage user account and security",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "AGNES Gnagne Cedric",
+        "email" : "cecenho55@gmail.com"
+    }],
+    "keywords" : [
+        "user security account"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+        "php": ">=5.5.9",
+        "puzzle/admin-bundle": "^1.0",
+        "puzzle/media-bundle": "^1.0"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Puzzle\\UserBundle" : ""
+        }
+    },
+    "target-dir" : "Puzzle/UserBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "1.0.0"
+        }
+    }
+}

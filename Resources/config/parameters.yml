@@ -1,0 +1,19 @@
+parameters:
+    user_email: user.email
+    user:
+        title: user.title
+        description: user.description
+        icon: user.icon
+        enable: true
+        roles:
+            user:
+                label: 'ROLE_USER'
+                description: user.role.user
+            user_manage:
+                label: 'ROLE_USER_MANAGE'
+                description: user.role.user_manage
+            admin:
+                label: 'ROLE_ADMIN'
+                description: user.role.admin
+
+

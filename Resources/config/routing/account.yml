@@ -1,0 +1,15 @@
+puzzle_admin_user_account_show_profile:
+    path:   /profile
+    defaults: { _controller: UserBundle:Admin:showCurrentUserProfile }
+    
+puzzle_admin_user_account_update_settings:
+    path:   /update/settings
+    defaults: { _controller: UserBundle:Admin:updateCurrentUserSettings }
+
+puzzle_admin_user_account_update_picture:
+    path:   /update/picture
+    defaults: { _controller: UserBundle:Admin:updateCurrentUserPicture }
+
+puzzle_admin_user_account_update_password:
+    path:   /update/credentials
+    defaults: { _controller: UserBundle:Admin:updateCurrentUserPassword }

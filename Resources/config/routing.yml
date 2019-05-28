@@ -1,0 +1,23 @@
+security:
+    resource: '@UserBundle/Resources/config/routing/security.yml'
+
+account_admin:
+    resource: '@UserBundle/Resources/config/routing/account.yml'
+    prefix:   '%admin_prefix%myaccount'
+    host: '%admin_host%'
+    options:
+        expose: true
+
+admin:
+    resource: '@UserBundle/Resources/config/routing/admin.yml'
+    prefix:   '%admin_prefix%user'
+    host: '%admin_host%'
+    options:
+        expose: true
+
+app:
+    resource: '@UserBundle/Resources/config/routing/app.yml'
+    host: '%host%'
+    prefix: '/account'
+    options:
+        expose: true

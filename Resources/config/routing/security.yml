@@ -1,0 +1,51 @@
+# App
+login:
+    path:   /login
+    defaults: { _controller: UserBundle:Security:login }
+    host: '%host%' 
+
+# Admin
+admin_login:
+    path:   '%admin_prefix%login'
+    defaults: { _controller: UserBundle:Security:adminLogin }
+    host: '%admin_host%' 
+
+register:
+    path:   /register
+    defaults: { _controller: UserBundle:Security:register }
+    host: '%host%' 
+
+security_user_confirm_registration:
+    path:   /register/confirm/{token}
+    defaults: { _controller: UserBundle:Security:confirmUserRegistration }
+    host: '%host%' 
+
+security_user_resetting_send_email:
+    path:   /resetting/send-email
+    defaults: { _controller: UserBundle:Security:resettingSendEmail }
+    host: '%host%'
+
+security_user_resetting_reset:
+    path:   /resetting/reset
+    defaults: { _controller: UserBundle:Security:resettingReset }
+    host: '%host%' 
+
+security_user_resetting_check_email:
+    path:   /resetting/check-email
+    defaults: { _controller: UserBundle:Security:resettingCheckEmail }
+    host: '%host%' 
+
+# Security
+security_user_confirm_registration:
+    path:   /register/confirm/{token}
+    defaults: { _controller: UserBundle:Security:confirmUserRegistration }
+
+security_check_user_registration:
+    path:   /register/check-email/{email}
+    defaults: { _controller: UserBundle:Security:checkUserRegistration }
+
+login_check:
+    path:   /login_check
+     
+logout:
+    path:   /logout

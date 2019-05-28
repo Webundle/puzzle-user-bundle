@@ -1,0 +1,15 @@
+app_user_show_profile:
+    path:   /profile
+    defaults: { _controller: UserBundle:App:showUserProfile }
+
+app_user_update_settings:
+    path:   /update-settings
+    defaults: { _controller: UserBundle:App:updateUserSettings }
+
+app_user_update_picture:
+    path:   /update-picture
+    defaults: { _controller: UserBundle:App:updateUserPicture }
+
+app_user_change_password:
+    path:   /change-password
+    defaults: { _controller: UserBundle:App:changeUserPassword }

@@ -1,0 +1,63 @@
+puzzle_admin_user_list:
+    path:   /list
+    defaults: { _controller: UserBundle:Admin:listUsers }
+
+puzzle_admin_user_create:
+    path:   /create
+    defaults: { _controller: UserBundle:Admin:createUser }
+    
+puzzle_admin_user_show:
+    path:   /{id}/show
+    defaults: { _controller: UserBundle:Admin:showUser }
+
+puzzle_admin_user_update:
+    path:   /{id}/update
+    defaults: { _controller: UserBundle:Admin:updateUser }
+
+puzzle_admin_user_enable:
+    path:   /{id}/enable
+    defaults: { _controller: UserBundle:Admin:enableUser }
+
+puzzle_admin_user_disable:
+    path:   /{id}/disable
+    defaults: { _controller: UserBundle:Admin:disableUser }
+
+puzzle_admin_user_lock:
+    path:   /{id}/lock
+    defaults: { _controller: UserBundle:Admin:lockUser }
+ 
+puzzle_admin_user_unlock:
+    path:   /{id}/unlock
+    defaults: { _controller: UserBundle:Admin:unlockUser }
+    
+puzzle_admin_user_update_credentials:
+    path:   /{id}/update-credentials
+    defaults: { _controller: UserBundle:Admin:updateUserCredentials }
+
+puzzle_admin_user_update_settings:
+    path:   /{id}/update-settings
+    defaults: { _controller: UserBundle:Admin:updateUserSettings }
+
+puzzle_admin_user_delete:
+    path:   /{id}/delete
+    defaults: { _controller: UserBundle:Admin:deleteUser }
+
+puzzle_admin_user_group_list:
+    path:   /group/list
+    defaults: { _controller: UserBundle:Admin:listGroups }
+
+puzzle_admin_user_group_create:
+    path:   /group/create
+    defaults: { _controller: UserBundle:Admin:createGroup }
+
+puzzle_admin_user_group_show:
+    path:   /group/{id}/show
+    defaults: { _controller: UserBundle:Admin:showGroup }
+
+puzzle_admin_user_group_update:
+    path:   /group/{id}/update
+    defaults: { _controller: UserBundle:Admin:updateGroup }
+
+puzzle_admin_user_group_delete:
+    path:   /group/{id}/delete
+    defaults: { _controller: UserBundle:Admin:deleteGroup }

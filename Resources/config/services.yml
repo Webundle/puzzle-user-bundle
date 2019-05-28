@@ -1,0 +1,38 @@
+services:
+    # handler
+    security.authentication_success_handler:
+        class: Puzzle\UserBundle\Security\Http\Handler\AuthenticationSuccessHandler
+        arguments: [ '@router', '@security.http_utils', [] ]
+    security.authentication_failure_handler:
+        class: Puzzle\UserBundle\Security\Http\Handler\AuthenticationFailureHandler
+        arguments: [ '@http_kernel', '@security.http_utils', [] ]
+    security.access_denied_handler:
+        class: Puzzle\UserBundle\Security\Http\Handler\AccessDeniedHandler
+    security.authentication_entry_point:
+        class: Puzzle\UserBundle\Security\Http\EntryPoint\XmlHttpRequestEntryPoint
+        arguments: [ '@router' ]
+    admin.security.authentication_entry_point:
+        class: Puzzle\UserBundle\Security\Http\EntryPoint\AdminXmlHttpRequestEntryPoint
+        arguments: [ '@router' ]
+    user.listener:
+        class: Puzzle\UserBundle\Listener\UserListener
+        arguments: [ '@doctrine.orm.entity_manager', '@router', '@mailer', '@twig', '@translator', '%user.registration.address%' ]
+        tags:
+            - { name: kernel.event_listener, event: "admin.installing", method: onAdminInstalling }
+            - { name: kernel.event_listener, event: "user.creating", method: onCreating }
+            - { name: kernel.event_listener, event: "user.created", method: onCreated }
+            - { name: kernel.event_listener, event: "user.updating", method: onUpdating }
+            - { name: kernel.event_listener, event: "user.updated", method: onUpdated }
+            - { name: kernel.event_listener, event: "user.enabled", method: onEnabled }
+            - { name: kernel.event_listener, event: "user.disabled", method: onDisabled }
+            - { name: kernel.event_listener, event: "user.locked", method: onLocked }
+            - { name: kernel.event_listener, event: "user.unlocked", method: onUnlocked }
+
+    # Twig extension
+    user.twig.extension:
+        class: Puzzle\UserBundle\Twig\UserExtension
+        arguments: [ '@doctrine.orm.entity_manager', "@knp_paginator" ]
+        public: false
+        tags:
+            - { name: twig.extension }
+
