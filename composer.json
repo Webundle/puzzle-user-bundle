@@ -1,5 +1,5 @@
 {
-    "name" : "puzzle/user-bundle",
+    "name" : "webundle/puzzle-user-bundle",
     "description" : "Manage user account and security",
     "type" : "symfony-bundle",
     "authors" : [{
